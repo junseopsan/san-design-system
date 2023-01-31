@@ -1,17 +1,17 @@
 const palette = {
-  gray6: '#868E96',
-  gray8: '#343A40'
+  red: '#ff6b6b',
+  gray: '#343A40'
 }
 
 const theme = {
   gray: {
-    color:'white',
-    background: palette.gray6
+    color:palette.gray,
+    background: palette.gray
   },
-  darkGray: {
-    color:'white',
-    background: palette.gray8
-  }
+  red: {
+    color:palette.red,
+    background: palette.red
+  },
 }
 
 export default theme;

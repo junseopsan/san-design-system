@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
-import React from 'react'
+import theme from '../styles/theme'
+import { ThemeId } from '../styles/emotion'
 
 interface Props {
   label: string
@@ -9,6 +10,8 @@ interface Props {
   lineHeight?: string
   paddingTop?: string
   paddingBottom?: string
+  color?: string
+  themeId?: ThemeId
 }
 
 function BigTitle({
@@ -19,8 +22,10 @@ function BigTitle({
   lineHeight,
   paddingTop,
   paddingBottom,
+  themeId,
 }: Props) {
   const styles = css({
+    color: themeId ? `${theme[themeId].color}` : '#000',
     fontWeight: `${fontWeight}`,
     fontSize: `${fontSize}`,
     fontStyle: `${fontStyle ? fontStyle : ''}`,

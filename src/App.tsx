@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import Typography from './components/Typography'
+import theme from './styles/theme'
 
 const ContainerBox = styled.div({
   paddingTop: '80px',
@@ -75,6 +76,7 @@ function App() {
             lineHeight="70px"
             label="Huge Title"
             paddingTop="24px"
+            themeId="red"
           />
           <Typography
             fontWeight="700"

@@ -1,6 +1,6 @@
 import '@emotion/react'
 
-type themeId = 'gray' | 'darkGray'
+type ThemeId = 'gray' | 'red'
 
 declare module '@emotion/react' {
   export interface Theme 
