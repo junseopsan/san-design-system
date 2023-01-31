@@ -6,11 +6,11 @@ interface Props {
   label: string
   fontWeight: string
   fontSize: string
+  color?: string
   fontStyle?: string
   lineHeight?: string
   paddingTop?: string
   paddingBottom?: string
-  color?: string
   themeId?: ThemeId
 }
 
