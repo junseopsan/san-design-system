@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.20.13",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
     "@emotion/css": "^11.10.5",
+    "@emotion/eslint-plugin": "^11.10.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@testing-library/jest-dom": "^5.14.1",
@@ -13,9 +16,13 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "customize-cra": "^1.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-config-react-app": "^7.0.1",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "some-lib": "^0.0.1",
@@ -23,22 +30,29 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "airbnb",
       "prettier"
     ],
     "rules": {
       "react/jsx-filename-extension": 0,
       "no-unused-vars": 1,
       "import/no-unresolved": "off",
-      "import/extensions": "off"
+      "import/extensions": "off",
+      "arrow-body-style": "off",
+      "react/no-unknown-property": [
+        "error",
+        {
+          "ignore": [
+            "css"
+          ]
+        }
+      ]
     }
   },
   "browserslist": {
