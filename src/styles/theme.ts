@@ -12,6 +12,9 @@ const fontBoldStyle = css`
 const fontItalicStyle = css`
   font-style: italic;
 `
+const textUpperCaseStyle = css`
+  text-transform: uppercase;
+`
 const hugeTitleCmmStyle = css`
     font-size: 60px;
     line-height: 70px;
@@ -80,30 +83,25 @@ const rubric1CmmStyle = css`
     font-size: 15px;
     line-height: 22px;
     letter-spacing: -0.21px;
-    text-transform: uppercase;
 `
 const rubric2CmmStyle = css`
     font-size: 13px;
     line-height: 22px;
     letter-spacing: -0.07px;
-    text-transform: uppercase;
 `
 const rubric3CmmStyle = css`
     font-size: 17px;
     line-height: 22px;
     letter-spacing: -0.41px;
-    text-transform: uppercase;
 `
 const rubric4CmmStyle = css`
     font-size: 11px;
     line-height: 16px;
     letter-spacing: -0.41px;
-    text-transform: uppercase;
 `
 const rubric5CmmStyle = css`
     font-size: 9px;
     line-height: 22px;
-    text-transform: uppercase;
 `
 
 const typography = {
@@ -267,38 +265,47 @@ const typography = {
     rubric15: css`
       ${rubric1CmmStyle}
       ${fontNomalStyle}
+      ${textUpperCaseStyle}
     `,
     rubric15SemiBold: css`
       ${rubric1CmmStyle}
       ${fontSemiBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric15Bold: css`
       ${rubric1CmmStyle}
       ${fontBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric13: css`
       ${rubric2CmmStyle}
       ${fontNomalStyle}
+      ${textUpperCaseStyle}
     `,
     rubric13SemiBold: css`
       ${rubric2CmmStyle}
       ${fontSemiBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric13Bold: css`
       ${rubric2CmmStyle}
       ${fontBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric17Bold: css`
       ${rubric3CmmStyle}
       ${fontBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric11Bold: css`
       ${rubric4CmmStyle}
       ${fontBoldStyle}
+      ${textUpperCaseStyle}
     `,
     rubric9Bold: css`
       ${rubric5CmmStyle}
       ${fontBoldStyle}
+      ${textUpperCaseStyle}
     `,
 } as const
 
