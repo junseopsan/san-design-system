@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import { Text } from '../components/Text'
 
-// export default or export
-// gray 영역.. 의식 영역으로 바꾼다.
 const TypographyPage = () => {
   const ContainerBox = styled.div({
     paddingTop: '80px',

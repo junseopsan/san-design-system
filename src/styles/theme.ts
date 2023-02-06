@@ -300,7 +300,6 @@ const typography = {
       ${rubric5CmmStyle}
       ${fontBoldStyle}
     `,
-  
 } as const
 
 const theme = {
