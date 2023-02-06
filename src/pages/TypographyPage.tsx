@@ -79,7 +79,14 @@ const TypographyPage = () => {
           <SubTitle>BIG TITLES</SubTitle>
           <Division />
           <PaddingDiv padding="24px 0 8px 0">
-            <Text typography="hugeTitle60">Huge Title</Text>
+            <Text
+              typography="hugeTitle60"
+              id="title"
+              className="classss"
+              name="title"
+            >
+              Huge Title
+            </Text>
           </PaddingDiv>
           <Text typography="hugeTitle60Bold">Huge Title</Text>
           <PaddingDiv padding="40px 0 8px 0">

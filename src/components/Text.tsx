@@ -4,12 +4,13 @@ import theme, { Typography } from '../styles/theme'
 
 interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   typography: Typography
+  id?: string
+  name?: string
+  className?: string
 }
 
 type SpanProp = Pick<Props, 'typography'>
 
-// 반복되는 행위를 제거한다.
-// id name class 사용할수 없다.
 export function Text({
   typography,
   children,

@@ -1,8 +1,7 @@
 import { css } from '@emotion/react' 
 
-
 const fontNomalStyle = css`
-  font-size: 400;
+  font-weight: 400;
 `
 const fontSemiBoldStyle = css`
   font-weight: 600;
@@ -12,7 +11,6 @@ const fontBoldStyle = css`
 `
 const fontItalicStyle = css`
   font-style: italic;
-
 `
 const hugeTitleCmmStyle = css`
     font-size: 60px;
@@ -160,6 +158,7 @@ const typography = {
   `,
   callout16: css`
     ${calloutCmmStyle}
+    ${fontNomalStyle}
   `,
   callout16SemiBold: css`
     ${calloutCmmStyle}
@@ -176,6 +175,7 @@ const typography = {
   `,
   subheadline15: css`
     ${subheadlineCmmStyle}
+    ${fontNomalStyle}
   `,
   subheadline15SemiBold: css`
     ${subheadlineCmmStyle}
@@ -192,6 +192,7 @@ const typography = {
   `,
   body17: css`
     ${bodyCmmStyle}
+    ${fontNomalStyle}
   `,
   body17SemiBold: css`
     ${bodyCmmStyle}
@@ -208,6 +209,7 @@ const typography = {
   `,
   footnote13: css`
     ${footnoteCmmStyle}
+    ${fontNomalStyle}
   `,
   footnote13SemiBold: css`
     ${footnoteCmmStyle}
@@ -224,6 +226,7 @@ const typography = {
     `,
     captions12: css`
       ${captions1CmmStyle}
+      ${fontNomalStyle}
     `,
     captions12SemiBold: css`
       ${captions1CmmStyle}
@@ -231,6 +234,7 @@ const typography = {
     `,
     captions12Italic: css`
       ${captions1CmmStyle}
+      ${fontNomalStyle}
       ${fontItalicStyle}
     `,
     captions12SemiBoldItalic: css`
@@ -240,6 +244,7 @@ const typography = {
     `,
     captions11: css`
       ${captions2CmmStyle}
+      ${fontNomalStyle}
     `,
     captions11SemiBold: css`
       ${captions2CmmStyle}
@@ -247,6 +252,7 @@ const typography = {
     `,
     captions11Italic: css`
       ${captions2CmmStyle}
+      ${fontNomalStyle}
       ${fontItalicStyle}
     `,
     captions11SemiBoldItalic: css`
@@ -260,6 +266,7 @@ const typography = {
     `,
     rubric15: css`
       ${rubric1CmmStyle}
+      ${fontNomalStyle}
     `,
     rubric15SemiBold: css`
       ${rubric1CmmStyle}
@@ -271,6 +278,7 @@ const typography = {
     `,
     rubric13: css`
       ${rubric2CmmStyle}
+      ${fontNomalStyle}
     `,
     rubric13SemiBold: css`
       ${rubric2CmmStyle}
