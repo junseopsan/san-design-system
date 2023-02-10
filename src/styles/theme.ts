@@ -1,312 +1,98 @@
 import { css } from '@emotion/react' 
 
-const fontNomalStyle = css`
-  font-weight: 400;
-`
-const fontSemiBoldStyle = css`
-  font-weight: 600;
-`
-const fontBoldStyle = css`
-  font-weight: 700;
-`
-const fontItalicStyle = css`
-  font-style: italic;
-`
-const textUpperCaseStyle = css`
-  text-transform: uppercase;
-`
-const hugeTitleCmmStyle = css`
-    font-size: 60px;
-    line-height: 70px;
-    letter-spacing: 0.25px;
-`
-const largeTitleCmmStyle = css`
-    font-size: 34px;
-    line-height: 41px;
-    letter-spacing: 0.374px;
-`
-const titleOneCmmStyle = css`
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: 0.364px;
-`
-const titleTwoCmmStyle = css`
-    font-size: 22px;
-    line-height: 28px;
-    letter-spacing: 0.35px;
-`
-const titleThreeCmmStyle = css`
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.38px;
-`
-const headlinesCmmStyle = css`
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-`
-const calloutCmmStyle = css`
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: -0.32px;
-`
-const subheadlineCmmStyle = css`
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: -0.24px;
-`
-const bodyCmmStyle = css`
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.408px;
-`
-const footnoteCmmStyle = css`
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: -0.078px;
-`
-const captions1CmmStyle = css`
-    font-size: 12px;
-    line-height: 16px;
-`
-const captions2CmmStyle = css`
-    font-size: 11px;
-    line-height: 12px;
-    letter-spacing: 0.066px;
-`
-const captions3CmmStyle = css`
-    font-size: 10px;
-    line-height: 12px;
-    letter-spacing: 0.07px;
-`
-const rubric1CmmStyle = css`
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.21px;
-`
-const rubric2CmmStyle = css`
-    font-size: 13px;
-    line-height: 22px;
-    letter-spacing: -0.07px;
-`
-const rubric3CmmStyle = css`
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.41px;
-`
-const rubric4CmmStyle = css`
-    font-size: 11px;
-    line-height: 16px;
-    letter-spacing: -0.41px;
-`
-const rubric5CmmStyle = css`
-    font-size: 9px;
-    line-height: 22px;
-`
+const fontSizeMap = {
+  nine: 9,
+  oneZero: 10,
+  oneOne: 11,
+  oneTwo: 12,
+  oneThree: 13,
+  oneFive: 15,
+  oneSix: 16,
+  oneSeven: 17,
+  twoZero: 20,
+  twoTwo: 22,
+  twoEight: 28,
+  threeFour: 34,
+  sixZero: 60,
+} as const
+
+const fontWeightMap = {
+  normal:400,
+  semiBold:600,
+  bold:700,
+}
+
+const generateTypography = (
+  size: keyof typeof fontSizeMap,
+  weight: keyof typeof fontWeightMap,
+  fontFamily?:string,
+  textTransform?:string
+) => {
+  return css`
+    font-size: ${fontSizeMap[size]}px;
+    font-weight: ${fontWeightMap[weight]};
+    font-family: ${fontFamily};
+    text-transform: ${textTransform};
+  `
+}
+
+// todo : generateTypography 추상화. 반복을 줄여보자. iterate. map. 클로져. 커링기법. 등등. 리버스 엔지니어링. emotion. react. <- 리버스 엔지니어링. 
+// 리액트 렌더링. 라이브러리를 전체 x. 렌더링 해주는 부분. 시간이 걸려도 천천히 한줄씩. 인사이트. 어떻게든.
+// 리버스 엔지니어링. 남들 안하는 행위를 할수록 스코프가 좁아진다. 호기심에서 시작한다. 성장을 위해 x 오래가지 못한다. 
+// tsx html markup. babel. 추상구문트리. webpack 웹 번들링. 호기심.
+// 에프랩 없이 멘토링. 나 혼자서 할 수 있어야 한다. 감사합니다. 깃허브.
+// 내 성장에 누군가의 디펜더시가 걸려이으면 좋지않다.
+// 선두에 있을려면 혼자 해야한다. 제 앞에 있을 필요 없다. 
+// 버셀. 3억. 트위터. 트위터. 
+// 패턴. 커스텀훅. 훅병. 스트릭트. 컴포넌트패턴. 
 
 const typography = {
-  hugeTitle60: css`
-    ${hugeTitleCmmStyle}
-    ${fontNomalStyle}
-  `,
-  hugeTitle60Bold: css`
-    ${hugeTitleCmmStyle}
-    ${fontBoldStyle}
-  `,
-  largeTitle34: css`
-    ${largeTitleCmmStyle}
-    ${fontNomalStyle}
-  `,
-  largeTitle34Bold: css`
-    ${largeTitleCmmStyle}
-    ${fontBoldStyle}
-  `,
-  titleOne28: css`
-    ${titleOneCmmStyle}
-    ${fontNomalStyle}
-  `,
-  titleOne28Bold: css`
-    ${titleOneCmmStyle}
-    ${fontBoldStyle}
-  `,
-  titleTwo22: css`
-    ${titleTwoCmmStyle}
-    ${fontNomalStyle}
-  `,
-  titleTwo22Bold: css`
-    ${titleTwoCmmStyle}
-    ${fontBoldStyle}
-  `,
-  titleThree20: css`
-    ${titleThreeCmmStyle}
-    ${fontNomalStyle}
-  `,
-  titleThree20Bold: css`
-    ${titleThreeCmmStyle}
-    ${fontBoldStyle}
-  `,
-  headlines17SemiBold: css`
-    ${headlinesCmmStyle}
-    ${fontSemiBoldStyle}
-  `,
-  headlines17SemiBoldItalic: css`
-    ${headlinesCmmStyle}
-    ${fontSemiBoldStyle}
-    ${fontItalicStyle}
-  `,
-  callout16: css`
-    ${calloutCmmStyle}
-    ${fontNomalStyle}
-  `,
-  callout16SemiBold: css`
-    ${calloutCmmStyle}
-    ${fontSemiBoldStyle}
-  `,
-  callout16Italic: css`
-    ${calloutCmmStyle}
-    ${fontItalicStyle}
-  `,
-  callout16SemiBoldItalic: css`
-    ${calloutCmmStyle}
-    ${fontSemiBoldStyle}
-    ${fontItalicStyle}
-  `,
-  subheadline15: css`
-    ${subheadlineCmmStyle}
-    ${fontNomalStyle}
-  `,
-  subheadline15SemiBold: css`
-    ${subheadlineCmmStyle}
-    ${fontSemiBoldStyle}
-  `,
-  subheadline15Italic: css`
-    ${subheadlineCmmStyle}
-    ${fontItalicStyle}
-  `,
-  subheadline15SemiBoldItalic: css`
-    ${subheadlineCmmStyle}
-    ${fontSemiBoldStyle}
-    ${fontItalicStyle}
-  `,
-  body17: css`
-    ${bodyCmmStyle}
-    ${fontNomalStyle}
-  `,
-  body17SemiBold: css`
-    ${bodyCmmStyle}
-    ${fontSemiBoldStyle}
-  `,
-  body17Italic: css`
-    ${bodyCmmStyle}
-    ${fontItalicStyle}
-  `,
-  body17SemiBoldItalic: css`
-    ${bodyCmmStyle}
-    ${fontSemiBoldStyle}
-    ${fontItalicStyle}
-  `,
-  footnote13: css`
-    ${footnoteCmmStyle}
-    ${fontNomalStyle}
-  `,
-  footnote13SemiBold: css`
-    ${footnoteCmmStyle}
-    ${fontSemiBoldStyle}
-  `,
-  footnote13Italic: css`
-    ${footnoteCmmStyle}
-    ${fontItalicStyle}
-    `,
-  footnote13SemiBoldItalic: css`
-    ${footnoteCmmStyle}
-    ${fontSemiBoldStyle}
-    ${fontItalicStyle}
-    `,
-    captions12: css`
-      ${captions1CmmStyle}
-      ${fontNomalStyle}
-    `,
-    captions12SemiBold: css`
-      ${captions1CmmStyle}
-      ${fontSemiBoldStyle}
-    `,
-    captions12Italic: css`
-      ${captions1CmmStyle}
-      ${fontNomalStyle}
-      ${fontItalicStyle}
-    `,
-    captions12SemiBoldItalic: css`
-      ${captions1CmmStyle}
-      ${fontSemiBoldStyle}
-      ${fontItalicStyle}
-    `,
-    captions11: css`
-      ${captions2CmmStyle}
-      ${fontNomalStyle}
-    `,
-    captions11SemiBold: css`
-      ${captions2CmmStyle}
-      ${fontSemiBoldStyle}
-    `,
-    captions11Italic: css`
-      ${captions2CmmStyle}
-      ${fontNomalStyle}
-      ${fontItalicStyle}
-    `,
-    captions11SemiBoldItalic: css`
-      ${captions2CmmStyle}
-      ${fontSemiBoldStyle}
-      ${fontItalicStyle}
-    `,
-    captions10SemiBold: css`
-      ${captions3CmmStyle}
-      ${fontSemiBoldStyle}
-    `,
-    rubric15: css`
-      ${rubric1CmmStyle}
-      ${fontNomalStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric15SemiBold: css`
-      ${rubric1CmmStyle}
-      ${fontSemiBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric15Bold: css`
-      ${rubric1CmmStyle}
-      ${fontBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric13: css`
-      ${rubric2CmmStyle}
-      ${fontNomalStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric13SemiBold: css`
-      ${rubric2CmmStyle}
-      ${fontSemiBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric13Bold: css`
-      ${rubric2CmmStyle}
-      ${fontBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric17Bold: css`
-      ${rubric3CmmStyle}
-      ${fontBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric11Bold: css`
-      ${rubric4CmmStyle}
-      ${fontBoldStyle}
-      ${textUpperCaseStyle}
-    `,
-    rubric9Bold: css`
-      ${rubric5CmmStyle}
-      ${fontBoldStyle}
-      ${textUpperCaseStyle}
-    `,
+  hugeTitle60: generateTypography("sixZero","normal"),
+  hugeTitle60Bold: generateTypography("sixZero", "bold"),
+  largeTitle34: generateTypography("threeFour", "normal"),
+  largeTitle34Bold: generateTypography("threeFour", "bold"),
+  titleOne28: generateTypography("twoEight", "normal"), 
+  titleOne28Bold: generateTypography("twoEight", "bold"), 
+  titleTwo22: generateTypography("twoTwo", "normal"), 
+  titleTwo22Bold: generateTypography("twoTwo", "bold"), 
+  titleThree20: generateTypography("twoZero", "normal"), 
+  titleThree20Bold: generateTypography("twoZero", "bold"), 
+  headlines17SemiBold: generateTypography("oneSeven", "semiBold"), 
+  headlines17SemiBoldItalic: generateTypography("oneSeven", "semiBold"), 
+  callout16: generateTypography("oneSix", "normal"), 
+  callout16SemiBold: generateTypography("oneSix", "semiBold"), 
+  callout16Italic: generateTypography("oneSix", "normal", 'italic'), 
+  callout16SemiBoldItalic: generateTypography("oneSix", "semiBold", 'italic'), 
+  subheadline15: generateTypography("oneFive", "normal"), 
+  subheadline15SemiBold: generateTypography("oneFive", "semiBold"), 
+  subheadline15Italic: generateTypography("oneFive", "normal", 'italic'), 
+  subheadline15SemiBoldItalic: generateTypography("oneFive", "semiBold", 'italic'), 
+  body17: generateTypography("oneSeven", "normal"), 
+  body17SemiBold: generateTypography("oneSeven", "semiBold"), 
+  body17Italic: generateTypography("oneSeven", "normal", 'italic'), 
+  body17SemiBoldItalic: generateTypography("oneSeven", "semiBold", 'italic'), 
+  footnote13: generateTypography("oneThree", "normal"), 
+  footnote13SemiBold: generateTypography("oneThree", "semiBold"), 
+  footnote13Italic: generateTypography("oneThree", "normal", 'italic'), 
+  footnote13SemiBoldItalic: generateTypography("oneThree", "semiBold", 'italic'), 
+  captions12: generateTypography("oneTwo", "normal"), 
+  captions12SemiBold: generateTypography("oneTwo", "semiBold"), 
+  captions12Italic: generateTypography("oneTwo", "normal", 'italic'), 
+  captions12SemiBoldItalic: generateTypography("oneTwo", "semiBold", 'italic'), 
+  captions11: generateTypography("oneOne", "normal"), 
+  captions11SemiBold: generateTypography("oneOne", "semiBold"), 
+  captions11Italic: generateTypography("oneOne", "normal"), 
+  captions11SemiBoldItalic: generateTypography("oneOne", "semiBold", 'italic'), 
+  captions10SemiBold: generateTypography("oneZero", "semiBold"), 
+  rubric15: generateTypography("oneFive", "normal", '', 'uppercase'), 
+  rubric15SemiBold: generateTypography("oneFive", "semiBold", '', 'uppercase'), 
+  rubric15Bold: generateTypography("oneFive", "bold", '', 'uppercase'), 
+  rubric13: generateTypography("oneThree", "normal", '', 'uppercase'), 
+  rubric13SemiBold: generateTypography("oneThree", "semiBold", '', 'uppercase'), 
+  rubric13Bold: generateTypography("oneThree", "bold", '', 'uppercase'), 
+  rubric17Bold: generateTypography("oneSeven", "bold", '', 'uppercase'), 
+  rubric11Bold: generateTypography("oneOne", "bold", '', 'uppercase'), 
+  rubric9Bold: generateTypography("nine", "bold", '', 'uppercase'), 
 } as const
 
 const theme = {
